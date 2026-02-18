@@ -1,7 +1,7 @@
 // Configuración centralizada de la API
 export const API_CONFIG = {
   // URL base de la API Laravel
-  BASE_URL: import.meta.env.VITE_API_URL || 'http://54.225.212.207/api',
+  BASE_URL: import.meta.env.VITE_API_URL || 'http://98.85.48.192/api',
   
   // Rutas de autenticación
   AUTH: {
