@@ -11,6 +11,4 @@ services:
       - /app/node_modules
     ports:
       - "5173:5173"
-    # Añadimos --polling para que los cambios en Windows/Mac se vean en Linux (AWS)
-    # y aseguramos el host 0.0.0.0
-    command: npm run dev -- --host 0.0.0.0 --polling
+    command: npm run dev -- --host 0.0.0.0
