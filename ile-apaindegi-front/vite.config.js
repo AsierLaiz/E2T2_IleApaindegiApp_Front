@@ -15,16 +15,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    host: '0.0.0.0', // Permite que Vite sea accesible fuera del contenedor
-    port: 5173,      // El puerto que mapeas en Docker
+server: {
+    host: '0.0.0.0',
+    port: 5173,
     strictPort: true,
     hmr: {
-      path: '/ws',      // Ruta que configuramos en Apache (ProxyPass /ws)
-      clientPort: 80,   // El navegador se comunica por el puerto 80 (Apache)
+      protocol: 'ws',        // Fuerza el protocolo WebSocket
+      host: '98.85.48.192',  // Pon tu IP pública aquí
+      clientPort: 80,        // El navegador siempre pide al 80
     },
     watch: {
-      usePolling: true, // Necesario para que detecte cambios dentro de Docker en Windows/AWS
+      usePolling: true,
     },
   },
 })
