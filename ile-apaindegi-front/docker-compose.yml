@@ -1,14 +1,7 @@
-version: "3.9"
-
 services:
-  vue_app:
+  frontend:
     build: .
-    container_name: vue_app
-    restart: unless-stopped
-    working_dir: /app
-    volumes:
-      - .:/app
-      - /app/node_modules
+    container_name: vue_front
     ports:
-      - "5173:5173"
-    command: npm run dev -- --host 0.0.0.0
+      - "80:80"
+    restart: always
